@@ -2,7 +2,7 @@ import React from 'react'
 import "./login.css"
 
 export default function Login() {
-    const host = 'https://noted-dashboard-auth.netlify.app/';
+    const host = 'http://localhost:3000/login';
     // const endpoint = 'api/login';
     return (
         <div className="login-redirect">
