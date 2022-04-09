@@ -5,34 +5,34 @@ import Newnote from './Newnote';
 import axios from 'axios';
 
 export default function Videohome(props) {
-  
-    const { seteditorActive,videoname,timestamp,url } = props;
-    const [notes,setNotes]=useState();
-    let [title,setTitle]=useState();
-    const fetchNotes=()=>{
-        
-        axios.get(`http://localhost:8000/api/v1/video/${videoname}`,{
-            headers:{
-                "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlNpeWEiLCJlbWFpbCI6InNpeWFAZ21haWwuY29tIiwidXNlcl9pZCI6IjYyMzczMDhkZTlmZTZiNmJhYjYxOTU1NiIsImlhdCI6MTY0ODgyNTIyNX0.Eylls1_gGvXmuU8IrI_nTr7VZZWb2Qp4TarfCcF4ulY"
+
+    const { seteditorActive, videoname, timestamp, url } = props;
+    const [notes, setNotes] = useState();
+    let [title, setTitle] = useState();
+    const fetchNotes = () => {
+
+        axios.get(`https://Backend-1.prathameshdukare.repl.co/api/v1/video/${videoname}`, {
+            headers: {
+                "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNpeWEiLCJlbWFpbCI6InNpeWFAZ21haWwuY29tIiwidXNlcl9pZCI6IjYyNGIzMDZjMmZkYTE2NDJjNzk2MzE1MiIsImlhdCI6MTY0OTQ5ODYxMX0.nWaNg430WccmNnxLHblG4xRI-TPsCcMZIW5zQunJcOg"
 
             }
-        }).then(data=>{
+        }).then(data => {
             console.log(data);
             setNotes(data.data.data);
         })
     }
 
-    
 
-    
-    useEffect(()=>{
+
+
+    useEffect(() => {
         console.log(videoname);
         videoname && fetchNotes();
-    },[videoname])
-    
-    
+    }, [videoname])
 
-   
+
+
+
 
     return (
         <div className='video-home'>
