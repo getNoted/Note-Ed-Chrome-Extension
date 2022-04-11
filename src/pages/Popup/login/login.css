@@ -4,5 +4,7 @@
   margin: 3rem 1rem;
 }
 .login-link {
-  font-size: 1rem;
+  color: #4a00fd;
+  font-size: 1.2rem;
+  font-weight: 500;
 }

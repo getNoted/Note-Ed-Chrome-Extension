@@ -1,34 +1,38 @@
-import React from 'react'
+import React,{useEffect,useState} from 'react'
 import Login from '../login/Login'
 import Note from './Note'
 import Newnote from './Newnote';
+import axios from 'axios';
 
 export default function Videohome(props) {
-    const { seteditorActive } = props;
-    const videoTitle = "React server components | Mehul Mohan";
-    const allNotes = [
-        { "00:00:23": "notes" },
-        { "00:01:23": "notes" },
-        { "00:04:08": "notes" }
-    ]
+    const { seteditorActive,videoname,timestamp,url} = props;
+    const [notes,setNotes]=useState();
+    let [title,setTitle]=useState();
+    const fetchNotes=()=>{
+        console.log(videoname);
+        axios.get(`http://localhost:8000/api/v1/video/${videoname}`,{
+            headers:{
+                "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlNpeWEiLCJlbWFpbCI6InNpeWFAZ21haWwuY29tIiwidXNlcl9pZCI6IjYyMzczMDhkZTlmZTZiNmJhYjYxOTU1NiIsImlhdCI6MTY0ODgyNTIyNX0.Eylls1_gGvXmuU8IrI_nTr7VZZWb2Qp4TarfCcF4ulY"
 
-    const allNotes2 = {
-        "00:00:23": "notes",
-        "00:01:23": "notes",
-        "00:04:08": "notes",
+            }
+        }).then(data=>{
+            console.log(data);
+            setNotes(data.data.data);
+        })
     }
 
-    let allNewNotes = Object.keys(allNotes2).map((item) => {
-        let tempObj = {}
-        tempObj[item] = allNotes2[item]
-        return tempObj
-    })
-    console.log(allNewNotes, "new arr")
+    
 
+    
+    useEffect(()=>{
+        console.log(videoname);
+        videoname && fetchNotes();
+    },[videoname])
+    
     return (
         <div className='video-home'>
-            <h2 className='video-title'>{videoTitle}</h2>
-            {allNewNotes.map((singleNote) => {
+            <h2 className='video-title'>{videoname}</h2>
+            {notes && notes.map((singleNote) => {
                 let singleNoteKey = Object.keys(singleNote)[0]
                 return <Note key={singleNoteKey} noteInfo={singleNote} seteditorActive={seteditorActive} />
             })}

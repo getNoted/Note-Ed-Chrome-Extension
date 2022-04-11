@@ -17,6 +17,7 @@
    2. Check `Developer mode`
    3. Click on `Load unpacked extension`
    4. Select the `build` folder.
+   5. Pin the extension to the `Toolbar`
 6. Good to go!
 
 ## Resources:

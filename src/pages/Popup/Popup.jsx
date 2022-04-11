@@ -1,20 +1,25 @@
 import React, { useState } from 'react';
-import Editor from './editor/Editor';
 import './Popup.css';
 import PopupNav from './popupNav/PopupNav';
-import Videohome from "./video/Videohome";
-
+import Login from './login/Login';
+import HomeFrame from './HomeFrame';
 
 const Popup = () => {
-    //
-    // const history = createMemoryHistory(); // Instead of createBrowserHistory();
-    const [isLoggedin, setisLoggedin] = useState(true);
+    const [isLoggedin, setisLoggedin] = useState(false);
     const [editorActive, seteditorActive] = useState(false);
+
+    chrome.storage.sync.get(['loggedInStatus'], function (result) {
+        console.log('loggedInStatus is ' + result.loggedInStatus);
+        if (result.loggedInStatus) {
+            setisLoggedin(true);
+        }
+    });
+
     return (
         <div className="App">
             <PopupNav />
-            {/* {isLoggedin ? <Editor /> : <Login setisLoggedin={setisLoggedin} />} */}
-            {editorActive ? <Editor seteditorActive={seteditorActive} /> : <Videohome seteditorActive={seteditorActive} />}
+            {isLoggedin ? <HomeFrame seteditorActive={seteditorActive} editorActive={editorActive} /> : <Login setisLoggedin={setisLoggedin} />}
+
             {/* <Editor /> */}
             {/* <Videohome seteditorActive={seteditorActive} /> */}
 
