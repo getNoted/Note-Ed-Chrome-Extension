@@ -12,8 +12,6 @@ export default function Videohome(props) {
   const [allNotes, setAllNotes] = useState(null);
   let [title, setTitle] = useState();
 
-  console.log(setAllNotes, 'setAllNotes in videojmo');
-
   const fetchNotes = async (video_id) => {
     let { authToken } = await chrome.storage.sync.get('authToken');
 
@@ -47,6 +45,10 @@ export default function Videohome(props) {
       let video_id = url.split('watch?v=')[1];
       if (video_id.includes('&t=')) {
         video_id = video_id.split('&t=')[0];
+        if (video_id.includes('&list=')) {
+          video_id = video_id.split('&list=')[0];
+          console.log("inside",video_id);
+        }
       }
       console.log('Formated video id', video_id);
       fetchNotes(video_id);

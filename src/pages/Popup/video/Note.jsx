@@ -16,7 +16,7 @@ export default function Note(props) {
     seteditorActive,
   } = props;
   console.log(noteInfo, 'noteInfo');
-  
+
   const deleteNote = async (e) => {
     const { authToken } = await chrome.storage.sync.get('authToken');
     e.preventDefault();
@@ -24,6 +24,10 @@ export default function Note(props) {
     let video_id = url.split('watch?v=')[1];
     if (video_id.includes('&t=')) {
       video_id = video_id.split('&t=')[0];
+      if (video_id.includes('&list=')) {
+        video_id = video_id.split('&list=')[0];
+        console.log("inside",video_id);
+      }
     }
 
     axios
