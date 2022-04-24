@@ -8,22 +8,28 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
 }
 .hero {
-  font-size: 1.4rem;
+  font-size: 27px;
   font-weight: 700;
-  font-family: cursive;
   letter-spacing: -1px;
   cursor: pointer;
+  color: var(--primary-color);
 }
+
 .popup-nav {
-  background-color: var(--primary-color);
+ 
   font-size: 1.2rem;
   height: 7vh;
   display: flex;
-  justify-content: space-between;
-  padding: 1.1em 1em;
+  padding-top:29px;
+  padding-left: 31px;
+  margin-bottom: 24px;
+  display: flex;
+  gap: 12px;
   align-items: center;
+  margin-top: 8px;
 }
 .bottom-nav {
   background-color: var(--primary-color);
@@ -48,6 +54,6 @@ h1 {
 }
 .video-info {
   padding: 3px 10px;
-  border-bottom: 2px solid var(--primary-color);
-  background-color: var(--primary-very-light);
+  margin-top: 37px;
+    margin-bottom: 13px;
 }

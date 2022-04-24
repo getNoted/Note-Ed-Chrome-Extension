@@ -29,6 +29,7 @@ export default function Videohome(props) {
           setAllNotes([]);
         } else {
           setAllNotes(data.data.data);
+          setTitle(data.data.videoname);
         }
       })
       .catch((err) => {
@@ -54,7 +55,7 @@ export default function Videohome(props) {
   }, [url]);
   return (
     <div className="video-home">
-      <h2 className="video-title">{videoname}</h2>
+      <h2 className="video-title">{title || videoname}</h2>
       {allNotes ? (
         allNotes.map((singleNote) => {
           let singleNoteKey = Object.keys(singleNote)[0];

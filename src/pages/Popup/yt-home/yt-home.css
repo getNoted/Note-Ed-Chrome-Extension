@@ -9,21 +9,34 @@
   justify-content: center;
   align-items: center;
   gap: 12px;
-  background: var(--primary-light);
+  
 }
 .yt-logo {
-  width: 50px;
+  width: 43px;
+}
+
+.videos-subtitle{
+  font-size: 22px;
+}
+
+.video-list{
+  padding-bottom: 10px;
 }
 
 .single-video {
   cursor: pointer;
   background-color: var(--primary-dark-md);
-  border: 2px solid var(--primary-light-md);
+  border-radius: 5px;
   padding: 1em;
   margin: 10px;
   color: white;
   font-size: 1rem;
   font-weight: 600;
+}
+
+.main-videohome{
+  max-height: 450px;
+  overflow: auto;
 }
 
 a.delete-btn {
@@ -34,12 +47,16 @@ a.delete-btn {
   padding: 3px 8px;
   text-decoration: none;
   border-radius: 3px;
-  border: 1px solid black;
+  
   margin-right: 8px;
   transition: 0.3s;
+  padding: 9px 13px
 }
 a.delete-btn:hover {
   background-color: #fbc8c8;
+}
+.childs h2{
+  font-weight: 500;
 }
 .buttons {
   justify-content: flex-start;

@@ -41,10 +41,10 @@ export default function YTHome() {
 
   const whenVideoListOpen = () => {
     return (
-      <>
+      <div className='main-videohome'>
         <div className="title">
           <img className="yt-logo" src={YtLogo} alt="youtube logo" />
-          <h1>Your Videos</h1>
+          <h1 className='videos-subtitle'>Your Videos</h1>
         </div>
         <div className="video-list">
           {allMyVideos ? (
@@ -62,7 +62,7 @@ export default function YTHome() {
             <LoadingSpinner />
           )}
         </div>
-      </>
+      </div>
     );
   };
   const mainYTHomeFrame = () => {

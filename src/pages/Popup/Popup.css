@@ -5,7 +5,6 @@
 body {
   width: 385px;
   height: 450px;
-  border: 3px solid var(--primary-color);
 }
 
 .App {

@@ -23,8 +23,8 @@ a.save-btn {
   padding: 3px 8px;
   text-decoration: none;
   border-radius: 3px;
-  border: 1px solid black;
   transition: 0.3s;
+  padding: 9px 13px
 }
 a.back-btn {
   font-size: 17px;
@@ -34,18 +34,24 @@ a.back-btn {
   padding: 3px 8px;
   text-decoration: none;
   border-radius: 3px;
-  border: 1px solid black;
+ 
   margin-right: 8px;
   transition: 0.3s;
+  padding: 9px 13px
 }
 .buttons {
   display: flex;
-  justify-content: center;
   align-items: center;
   padding: 7px;
   margin-bottom: 7px;
   gap: 1rem;
   background-color: var(--primary-light-md);
+  padding: 17px;
+}
+
+.editor-buttons{
+  
+  justify-content: center;
 }
 .back-btn:hover {
   background-color: var(--primary-light-lg);
@@ -60,4 +66,13 @@ button.ce-inline-tool,
 button.ce-inline-tool.ce-inline-tool--bold,
 button.ce-inline-tool.ce-inline-tool--italic {
   margin: 0;
+}
+
+.editor-timestamp{
+  font-weight: 500;
+}
+
+.video-title-editor{
+  font-weight: 500;
+  font-size: 20px;
 }
