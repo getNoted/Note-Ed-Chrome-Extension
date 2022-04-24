@@ -5,7 +5,7 @@
 
 .note {
   width: 85%;
-  border: 2px solid var(--primary-color);
+ 
   padding: 0.75em;
   margin: 0.7rem auto;
   background-color: var(--primary-light);
@@ -14,6 +14,8 @@
   justify-content: space-around;
   border-radius: 6px;
   transition: 0.1s;
+  filter:drop-shadow(7px 1px 3px grey);
+  
 }
 .timestamp {
   cursor: pointer;
@@ -26,8 +28,19 @@
 }
 .video-title {
   /* padding: 0.5rem; */
-  background-color: #effdff;
+ 
   margin: 0.5rem 0.5rem;
+  margin-top: 26px;
+  margin-bottom: 24px;
+  font-weight: 500;
+    font-size: 20px;
+}
+.video-home{
+  max-height: 450px;
+  overflow: auto;
+}
+.timestamp{
+  font-weight: 500;
 }
 .action-btn-icon {
   width: 22px;

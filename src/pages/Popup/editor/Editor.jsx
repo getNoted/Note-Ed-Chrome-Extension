@@ -3,11 +3,31 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import './editor.css';
 import tools from './commonTools';
+import Snackbar from '@mui/material/Snackbar';
+import MuiAlert from '@mui/material/Alert';
+
+const Alert = React.forwardRef(function Alert(props, ref) {
+  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+});
 
 const API_URL = 'http://localhost:8000';
 
 export default function Editor(props) {
     const { seteditorActive, activeNote, videoname, url, currentTime } = props;
+
+    const [open, setOpen] = React.useState(false);
+
+  const handleClick = () => {
+    setOpen(true);
+  };
+
+  const handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setOpen(false);
+  };
 
     let editor;
     const launchEditor = () => {
@@ -49,7 +69,11 @@ export default function Editor(props) {
                         }
                     )
                     .then((response) => {
-                        console.log(response);
+                        console.log(response.status+">>>>>>>>>>>>>>>");
+                        if(response.status===200){
+                            handleClick();
+                        }
+                        
                     })
                     .catch((err) => {
                         console.log(err);
@@ -63,14 +87,14 @@ export default function Editor(props) {
 
     useEffect(() => {
         launchEditor();
-    });
+    },[]);
     return (
         <>
             <div className="video-nav">
                 <div className="video-info">
-                    <h2>{videoname}</h2>
+                    <h2 className='video-title-editor'>{videoname}</h2>
                 </div>
-                <div className="buttons">
+                <div className="buttons editor-buttons">
                     <div className="childs">
                         <a
                             className="back-btn"
@@ -85,11 +109,17 @@ export default function Editor(props) {
                             Save
                         </a>
                     </div>
-                    <h2>{`Timestamp : ${activeNote ? Object.keys(activeNote)[0] : currentTime
+                    <h2 className='editor-timestamp'>{`Timestamp : ${activeNote ? Object.keys(activeNote)[0] : currentTime
                         }`}</h2>
                 </div>
             </div>
             <div id="editorjs"></div>
+
+            <Snackbar open={open} autoHideDuration={2000} onClose={handleClose}>
+        <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
+          Note Saved!
+        </Alert>
+      </Snackbar>
         </>
     );
 }
