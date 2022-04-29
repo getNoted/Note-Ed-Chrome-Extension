@@ -10,7 +10,7 @@ const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
 
-const API_URL = 'http://localhost:8000';
+const API_URL = 'https://backend-1.prathameshdukare.repl.co';
 
 export default function Editor(props) {
     const { seteditorActive, activeNote, videoname, url, currentTime } = props;

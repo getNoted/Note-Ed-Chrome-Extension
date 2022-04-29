@@ -1,10 +1,10 @@
 import React from 'react';
 import './note.css';
 import deleteIcon from '../../../assets/img/delete-icon-32.png';
-import editIcon from '../../../assets/img/edit-24.png';
+// import editIcon from '../../../assets/img/edit-24.png';
 import axios from 'axios';
 
-const API_URL = 'http://localhost:8000';
+const API_URL = 'https://backend-1.prathameshdukare.repl.co';
 
 export default function Note(props) {
   const {

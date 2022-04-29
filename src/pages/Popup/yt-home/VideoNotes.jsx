@@ -4,7 +4,7 @@ import axios from 'axios';
 import LoadingSpinner from '../LoadingSpinner';
 
 // globle variables
-const host = 'http://localhost:8000';
+const host = 'https://backend-1.prathameshdukare.repl.co';
 
 export default function VideoNotes({
   activeVideo,

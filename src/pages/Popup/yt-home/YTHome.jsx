@@ -7,7 +7,7 @@ import VideoNotes from './VideoNotes';
 import Editor from '../editor/Editor';
 import LoadingSpinner from '../LoadingSpinner';
 
-const host = 'http://localhost:8000';
+const host = 'https://backend-1.prathameshdukare.repl.co';
 
 export default function YTHome() {
   const [allMyVideos, setAllMyVideos] = useState(null);
