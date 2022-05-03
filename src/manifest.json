@@ -2,6 +2,7 @@
   "manifest_version": 3,
   "name": "Note-Ed chrome extension",
   "description": "A chrome extension to take notes while learning on youtube",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtz5y9/CUnv5sLqSKubfXDuHzD4zrXP3OMpqSSUdsvy+wm2qe+bo95UclIvTEB0X0CsgeTVK23LOJzIY1EXliS/7gulnBaTV6wIX7zuXAoAiTQ0n2S4G5PICQxKFPqEOEkKvQzWG71MBtMzIjuJa9x+YJS866gb5MyoolOrh6GXYivMruUvYAbPxmjS3cpnuJ5Z07zbHUDPb6vLQRFL73G3UwokiqrKT8HXXvaBCGAFsKfqdwhltTPZRW+fN5D2i7z9u0mwGrvdhV/188IMDH5Plc8StiicEhkAcW1YqWX8h9ywJz4Pwp2XcX195tHiWivtEI8N6/BOrlNCDnfOTA+wIDAQAB",
   "options_page": "options.html",
   "background": {
     "service_worker": "background.bundle.js"
