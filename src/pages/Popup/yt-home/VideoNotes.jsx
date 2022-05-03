@@ -13,6 +13,7 @@ export default function VideoNotes({
   setisVideoNotesOpen,
 }) {
   const [allNotes, setAllNotes] = useState(null);
+  const [isLoading, setisLoading] = useState(false);
 
   console.log(activeVideo);
 
@@ -40,11 +41,18 @@ export default function VideoNotes({
           authorization: `Bearer ${authToken}`,
         },
       })
-    // back to the main frame
-    window.location.reload();
+      .then((response) => {
+        console.log(response.data.message)
+        if(response.data.message==="success"){
+          // setisVideoNotesOpen(false);
+          // back to the main frame
+          window.location.reload();
+        }
+      })
   };
 
   return (
+
     <div className="vidoe-notes">
       <h2 className="video-title">{activeVideo.video_name}</h2>
       <div className="buttons">

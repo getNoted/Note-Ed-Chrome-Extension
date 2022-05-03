@@ -60,7 +60,7 @@ export default function Note(props) {
     });
 
     console.log(newNotes);
-    setAllNotes(newNotes);
+    // setAllNotes(newNotes); 
     console.log('deleted');
   };
   const editNote = (e) => {
