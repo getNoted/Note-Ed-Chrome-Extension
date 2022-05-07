@@ -39,16 +39,19 @@ export default function Note(props) {
         }
       )
       .then((response) => {
-        if(response.data.message ==="success"){
-          window.location.reload();
-        }
+        console.log(response.data.message);
       })
       .catch((err) => {
         console.log(err);
         return false;
       });
-    
+
+      let updatedNotes = allNotes.filter((note) => {
+        return Object.keys(note)[0] !== Object.keys(noteInfo)[0];
+      })
+      setAllNotes(updatedNotes)
   };
+
   const editNote = (e) => {
     e.preventDefault();
     console.log('editing');
