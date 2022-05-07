@@ -47,6 +47,7 @@
 }
 .action-btn {
   padding: 5px;
+  cursor: pointer;
   /* margin: 5px; */
 }
 .new-note {

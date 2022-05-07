@@ -58,6 +58,11 @@ export default function Videohome(props) {
   return (
     <div className="video-home">
       <h2 className="video-title">{title || videoname}</h2>
+      <Newnote
+        setActiveNote={setActiveNote}
+        seteditorActive={seteditorActive}
+      />
+      
       {allNotes ? (
         allNotes.map((singleNote) => {
           let singleNoteKey = Object.keys(singleNote)[0];
@@ -76,10 +81,7 @@ export default function Videohome(props) {
       ) : (
         <LoadingSpinner />
       )}
-      <Newnote
-        setActiveNote={setActiveNote}
-        seteditorActive={seteditorActive}
-      />
+      
     </div>
   );
 }
