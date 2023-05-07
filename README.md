@@ -20,8 +20,9 @@
    5. Pin the extension to the `Toolbar`
 6. Good to go!
 
-
-## Dashboard Code : https://github.com/getNoted/Note-ed-Dashboard
+---
+### Dashboard Code : https://github.com/getNoted/Note-ed-Dashboard
+---
 ## Resources:
 
 - [Chrome Extension documentation](https://developer.chrome.com/extensions/getstarted)
